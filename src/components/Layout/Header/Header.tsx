@@ -4,46 +4,104 @@ import {
   Box,
   Typography,
   TextField,
+  Button,
   InputAdornment,
   IconButton,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
+import BurgerMenu from "../BurguerMenu/BurguerMenu";
 
 interface Props {}
 
 function Header(props: Props) {
   return (
-    <header className="top-0 flex flex-col items-center justify-between py-3 px-5 gap-10 bg-blue-700 shadow-sm text-white rounded-b-xl sm:items-start">
-      <Box className="flex items-center justify-between gap-4">
+    <Box className="top-0 flex flex-col items-center py-3 px-5 gap-8 bg-[rgb(35,15,97)] shadow-sm text-white rounded-b-3xl sm:items-start ">
+      <Box className="flex items-center justify-between w-full gap-4 pt-4">
         <img
           src="/gymProfile.jpeg"
           alt="imagen perfil"
-          className="rounded-full w-16 border-2 border-violet-400"
+          className="rounded-full w-14 border-2 border-violet-400"
         />
+        <BurgerMenu />
+      </Box>
+      <Box className="flex items-center justify-between gap-4">
         <Box>
-          <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+          <Typography variant="h4" sx={{ fontWeight: "bold" }}>
             Fit Control
           </Typography>
-          <Typography variant="body2" className="text-xs pt-2">
-            Mas control, mejor servicio para tu gym.
+          <Typography variant="body2" className="text-xs pt-2 text-slate-300">
+            Av. Andres Romero 123, Sarandi Grande, Florida.
           </Typography>
         </Box>
       </Box>
       <Box className="flex items-center gap-4 sm:w-3/12">
         <form action="" className="w-screen px-5 flex justify-center sm:px-0">
           <TextField
-            label="Buscar usuarios"
+            // label="Buscar usuarios..."
             type="text"
             name="search"
             fullWidth
             variant="outlined"
             size="small"
-            className="bg-white rounded-xl"
+            className="bg-[rgb(131,82,195)] rounded-3xl"
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <IconButton sx={{ color: "white" }}>
+                      <SearchIcon />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton sx={{ color: "white" }}>
+                      <AddIcon />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              },
+            }}
+            sx={{
+              "& fieldset": { border: "none" },
+              "& input": { color: "white", paddingLeft: "8px" }, // Ajuste para centrar el texto con los iconos
+              "& label": {
+                color: "lightgray",
+                fontSize: "16px",
+              },
+              "& .MuiInputLabel-shrink": {
+                left: 0, // Evita que se mueva al hacer focus
+              },
+            }}
           />
         </form>
       </Box>
-    </header>
+      <Box className="flex items-center gap-4 pb-2">
+        {["Todos", "Activos", "Vencidos"].map((text) => (
+          <Button
+            key={text}
+            variant="contained"
+            color="secondary"
+            sx={{
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              borderRadius: "0",
+              textTransform: "none",
+              width: "80px",
+              textAlign: "center",
+              "&:hover": {
+                backgroundColor: "rgb(131,82,195)",
+                borderRadius: "3rem",
+                transition: "0.3s",
+              },
+            }}
+          >
+            {text}
+          </Button>
+        ))}
+      </Box>
+    </Box>
   );
 }
 
