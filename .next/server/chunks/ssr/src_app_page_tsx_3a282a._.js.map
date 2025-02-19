@@ -2,6 +2,6 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/dev/fit-control-app/src/app/page.tsx"],"sourcesContent":["\"use client\"\nimport React from 'react'\n\n\ninterface Props {}\n\nfunction Page(props: Props) {\n  const {} = props\n\n  return (\n   <h1>fit</h1>\n  )\n}\n\nexport default Page\n"],"names":[],"mappings":";;;;AAAA;;AAMA,SAAS,KAAK,KAAY;IACxB,MAAM,EAAE,GAAG;IAEX,qBACC,8OAAC;kBAAG;;;;;;AAEP;uCAEe"}},
-    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/dev/fit-control-app/src/app/page.tsx"],"sourcesContent":["\"use client\"\nimport React from 'react'\nimport { Box } from '@mui/material'\nimport UserCard from '../components/UserCard/UserCard'\n\n\n\nfunction Page() {\n  const users = [\n    { id: 1, name: \"Juan Pérez\", plan: \"Plan Premium\", status: \"Activo\" },\n    { id: 2, name: \"María López\", plan: \"Plan Básico\", status: \"Vencido\" },\n    { id: 3, name: \"Carlos Gómez\", plan: \"Plan Pro\", status: \"Activo\" },\n  ];\n\n  return (\n    <Box>\n      \n    </Box>\n  );\n}\n\nexport default Page\n"],"names":[],"mappings":";;;;AAEA;AAFA;;;AAOA,SAAS;IACP,MAAM,QAAQ;QACZ;YAAE,IAAI;YAAG,MAAM;YAAc,MAAM;YAAgB,QAAQ;QAAS;QACpE;YAAE,IAAI;YAAG,MAAM;YAAe,MAAM;YAAe,QAAQ;QAAU;QACrE;YAAE,IAAI;YAAG,MAAM;YAAgB,MAAM;YAAY,QAAQ;QAAS;KACnE;IAED,qBACE,8OAAC,iLAAA,CAAA,MAAG;;;;;AAIR;uCAEe"}},
+    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
 }

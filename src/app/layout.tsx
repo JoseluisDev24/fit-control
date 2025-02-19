@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import {Box, Container} from "@mui/material"
-import Header from "../components/Layout/Header/Header";
+// import { Container, ThemeProvider } from "@mui/material";
+import {Container} from "@mui/material";
+import Header from "../components/Header/Header";
 import "./globals.css";
-
+// import theme from "../utils/theme";
 
 export const metadata: Metadata = {
   title: "Fit Control",
@@ -18,9 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased min-h-screen bg-gradient-to-b from-slate-200 to-slate-100">
-        <Container maxWidth="xl" className="flex flex-col h-screen " sx={{padding: 0}}>
-          <Header />
-        </Container>
+        {/* <ThemeProvider theme={theme}> */}
+          <Container maxWidth="xl" sx={{ padding: 0 }}>
+            <Header />
+            <main>{children}</main>
+          </Container>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
