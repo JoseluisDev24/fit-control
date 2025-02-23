@@ -1,7 +1,17 @@
-"use client"
+"use client";
 import React, { useState } from "react";
-import { Menu, MenuItem, IconButton } from "@mui/material";
+import {
+  Menu,
+  MenuItem,
+  IconButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import SettingsIcon from "@mui/icons-material/Settings";
+import PersonIcon from "@mui/icons-material/Person";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import HelpIcon from "@mui/icons-material/Help";
 
 function BurgerMenu() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -18,7 +28,7 @@ function BurgerMenu() {
   return (
     <div>
       {/* Botón de menú hamburguesa */}
-      <IconButton onClick={handleClick} sx={{ color: "white"}}>
+      <IconButton onClick={handleClick} sx={{ color: "white" }}>
         <MenuIcon />
       </IconButton>
 
@@ -29,15 +39,38 @@ function BurgerMenu() {
         onClose={handleClose}
         PaperProps={{
           sx: {
+            width: "100%",
+            height: "100%",
             backgroundColor: "rgb(35,15,97)", // Color de fondo del menú
             color: "white", // Color del texto
             borderRadius: "10px",
           },
         }}
       >
-        <MenuItem onClick={handleClose}>Inicio</MenuItem>
-        <MenuItem onClick={handleClose}>Perfil</MenuItem>
-        <MenuItem onClick={handleClose}>Configuración</MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <PersonIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText>Perfil</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <SettingsIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText>Configuración</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <HelpIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText>Centro de ayuda</ListItemText>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <ListItemIcon>
+            <ExitToAppIcon sx={{ color: "white" }} />
+          </ListItemIcon>
+          <ListItemText>Cerrar sesion</ListItemText>
+        </MenuItem>
       </Menu>
     </div>
   );

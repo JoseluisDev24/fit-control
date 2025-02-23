@@ -2,6 +2,7 @@
 import React from 'react'
 import { Box, Grid } from '@mui/material'
 import UserCard from '../components/UserCard/UserCard'
+import Login from '../app/login/page'
 
 
 
@@ -16,8 +17,8 @@ function Page() {
   ];
 
   return (
-    <Box className="py-4 px-2">
-      <Grid container spacing={2}>
+    <Box className="py-3 px-2">
+      <Grid container spacing={1}>
         {users.map((user) => (
           <Grid item key={user.id} xs={12} sm={6} md={4}>
             <UserCard
@@ -28,6 +29,7 @@ function Page() {
           </Grid>
         ))}
       </Grid>
+      <Login />
     </Box>
   );
 }

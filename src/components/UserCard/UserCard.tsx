@@ -22,16 +22,16 @@ const UserCard = ({
       sx={{
         display: "flex",
         alignItems: "center",
-        p: 2,
+        p: 1,
         maxWidth: 400,
-        height: "100px",
+        height: "96px",
         borderRadius: "20px",
       }}
     >
       <Avatar
         src="/gymProfile.jpeg"
         alt={name}
-        sx={{ width: 56, height: 56, mr: 2 }}
+        sx={{ width: 52, height: 52, mr: 1, ml: 1 }}
       />
 
       <CardContent sx={{ flex: 1 }}>
@@ -41,7 +41,7 @@ const UserCard = ({
         <Typography variant="body2" color="text.secondary">
           {plan}
         </Typography>
-        <Box mt={1}>
+        <Box mt={0}>
           <Chip
             label={status}
             color={status === "Activo" ? "success" : "error"}
